@@ -1,0 +1,38 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  border: 1px solid #d1dbdb;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.image-dish {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.remove-btn {
+  background-color: transparent;
+  width: 100px;
+  border-width: 0px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 700;
+  color: blue;
+}

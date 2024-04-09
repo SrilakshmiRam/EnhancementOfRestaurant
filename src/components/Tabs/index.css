@@ -1,0 +1,17 @@
+.tabs-container {
+  padding-left: 45px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d1dbdb;
+  padding-top: 10px;
+}
+
+.menu-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-rule {
+  border: 1px solid #d1dbdb;
+  width: 100%;
+}

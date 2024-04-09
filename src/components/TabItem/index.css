@@ -1,0 +1,27 @@
+.menu-category {
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 600;
+  color: #000007;
+  margin-right: 35px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border-width: 0px;
+}
+
+.active-category {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 600;
+  color: red;
+  margin-right: 35px;
+  border-bottom: 2px red solid;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+}

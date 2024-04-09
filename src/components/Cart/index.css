@@ -1,0 +1,38 @@
+.cart-list-items {
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-image {
+  width: 25%;
+  padding-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.removeallBtn {
+  background-color: transparent;
+  height: 26px;
+  width: 120px;
+  border-width: 0px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 700;
+  color: red;
+  display: flex;
+  align-self: flex-end;
+  margin: 20px;
+}

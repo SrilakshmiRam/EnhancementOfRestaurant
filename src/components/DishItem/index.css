@@ -1,0 +1,138 @@
+.dishes-details-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 500px;
+}
+
+.addbtn {
+  height: 26px;
+  width: 100px;
+  background-color: #293fcf;
+  margin-bottom: 15px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  border-width: 0px;
+  border-radius: 4px;
+}
+
+.currrency-price-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dish-item {
+  border: 1px solid #d1dbdb;
+  margin: 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dish-image {
+  width: 10%;
+  margin-right: 10px;
+}
+
+.dishes-count {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: green;
+  width: 100px;
+  height: 25px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 6px;
+}
+
+.button {
+  background-color: transparent;
+  outline: none;
+  height: 20px;
+  width: 20px;
+  border-width: 0px;
+  color: #ffffff;
+}
+
+.dishname {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+}
+
+.dish-calories {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 800;
+  color: #cf7429;
+}
+
+.customizations {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 800;
+  color: #293fcf;
+}
+
+.dishes-notavailable {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 800;
+  color: #e8232d;
+}
+
+.currency {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b4d4f;
+}
+
+.dish-description {
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  color: #b7babd;
+}
+
+.price {
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .dishname {
+    font-size: 15px;
+  }
+
+  .customizations {
+    font-size: 12px;
+  }
+
+  .dish-description {
+    font-size: 10px;
+  }
+
+  .dish-calories {
+    font-size: 10px;
+    margin-right: 5px;
+  }
+
+  .dishes-details-container {
+    margin-left: 10px;
+    width: 400px;
+  }
+}
