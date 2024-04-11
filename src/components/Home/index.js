@@ -1,16 +1,25 @@
 import {Component} from 'react'
 
+import Loader from 'react-loader-spinner'
+
 import CartContext from '../../context/CartContext'
 
 import Header from '../Header'
 import Tabs from '../Tabs'
 import DishItem from '../DishItem'
 
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  inProgress: 'IN_PROGRESS',
+}
+
 class Home extends Component {
   state = {
     menuCategories: [],
     activeTabId: '',
     dishesList: [],
+    apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
@@ -18,6 +27,10 @@ class Home extends Component {
   }
 
   getDishDetails = async () => {
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+    })
+    
     const url = 'https://run.mocky.io/v3/77a7e71b-804a-4fbd-822c-3e365d3482cc'
 
     const options = {
@@ -79,6 +92,7 @@ class Home extends Component {
         menuCategories: updatedRestaurant.tableMenuList,
         activeTabId: updatedRestaurant.tableMenuList[0].menuCategoryId,
         dishesList: updatedRestaurant.tableMenuList[0].categoryDishes,
+        apiStatus: apiStatusConstants.success,
       })
     }
   }
@@ -94,6 +108,42 @@ class Home extends Component {
     })
   }
 
+  renderLoadingView = () => (
+    <div className="loader-container">
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    </div>
+  )
+
+  renderSuccessView = () => {
+    const {menuCategories, activeTabId, dishesList} = this.state
+    return (
+      <>
+        <Tabs
+          menuCategories={menuCategories}
+          activeTabId={activeTabId}
+          updateActiveId={this.updateActiveId}
+        />
+        <ul className="dishes-list">
+          {dishesList.map(eachDish => (
+            <DishItem dishDetails={eachDish} key={eachDish.menuCategoryId} />
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  renderDishesList = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSuccessView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
     const {menuCategories, activeTabId, dishesList} = this.state
 
@@ -104,19 +154,7 @@ class Home extends Component {
           return (
             <div className="app-container">
               <Header restaurantname={restaurantname} />
-              <Tabs
-                menuCategories={menuCategories}
-                activeTabId={activeTabId}
-                updateActiveId={this.updateActiveId}
-              />
-              <ul className="dishes-list">
-                {dishesList.map(eachDish => (
-                  <DishItem
-                    dishDetails={eachDish}
-                    key={eachDish.menuCategoryId}
-                  />
-                ))}
-              </ul>
+              {this.renderDishesList()}
             </div>
           )
         }}
